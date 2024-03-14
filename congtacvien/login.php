@@ -2,7 +2,7 @@
 @include('../classes/ctvlogin.php');
 ?>
 <?php 
-$class= new CTVlogin();
+$class= new ctvlogin();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$CTV_username 	= $_POST['CTV_username'];
 	$CTV_pass 		= $_POST['CTV_pass'];
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
 	<section id="content">
 		<form action="login.php" method="post">
-			<h1>Cộng tác viên</h1>
+			<h1>NHÂN VIÊN </h1>
 			<span> <?php
 			if(isset($login_check)){
 				echo $login_check;

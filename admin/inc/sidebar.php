@@ -15,32 +15,12 @@
                     </ul>
                 </li>
 
-                <li><a class="menuitem">Quản lý bài đăng</a>
+                <li><a class="menuitem">Quản lý hóa đơn</a>
                     <ul class="submenu">
-                        <li><a href="addreview.php">Thêm bài đăng</a> </li>
-                        <li><a href="reviewlist.php">Danh sách bài đăng</a> </li>
+                        <li><a href="paylist.php">Danh sách hóa đơn</a> </li>
                     </ul>
                 </li>
-               <!-- <li><a class="menuitem">Điều chỉnh trang web</a>
-                    <ul class="submenu">
-                        <li><a href="titleslogan.php">Tên và câu khẩu hiệu</a></li>
-                        <li><a href="social.php">Truyền Thông</a></li>
-                        <li><a href="copyright.php">Bản quyền</a></li>
-                        
-                    </ul>
-                </li>
-                <li><a class="menuitem">Cập nhật trang website</a>
-                    <ul class="submenu">
-                        <li><a>Về chúng tôi</a></li>
-                        <li><a>Liện hệ với chúng tôi</a></li>
-                    </ul>
-                </li>
-				<li><a class="menuitem">Điều chỉnh Slider</a>
-                    <ul class="submenu">
-                        <li><a href="addslider.php">Thêm Slider</a> </li>
-                        <li><a href="sliderlist.php">Danh sách Slider</a> </li>
-                    </ul>
-                </li> -->
+              
                 
             </ul>
         </div>
