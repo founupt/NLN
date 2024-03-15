@@ -87,10 +87,16 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-			  <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
+			<form action="#" class="search-form">
+                <div class="form-group">
+                  <span class="icon ion-ios-search"></span>
+                  <input type="text" class="form-control" placeholder="Search...">
+                </div>
+              </form>
+	          <li class="nav-item"><a href="index.php" class="nav-link">Trang chủ</a></li>
+			  <li class="nav-item"><a href="shop.php" class="nav-link">Món ăn</a></li>
 	         
-	          <li class="nav-item active"><a href="cartindex.php" class="nav-link">Cart</a></li>
+	          <li class="nav-item active"><a href="cartindex.php" class="nav-link">Giỏ hàng</a></li>
 	          
 			  <li class="nav-item dropdown">
 				<?php

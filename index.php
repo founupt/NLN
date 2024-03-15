@@ -156,7 +156,7 @@ $actitive = "index";
 
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="./images/<?php echo $result_new['MA_HINHANH']?>" alt="Colorlib Template">
+    					<a href="chitietmonan.php?maid=<?php echo ($result_new['MA_MA'])?>" class="img-prod"><img class="img-fluid" src="./images/<?php echo $result_new['MA_HINHANH']?>" alt="Colorlib Template">
     						<span class="status">30%</span>
     						<div class="overlay"></div>
     					</a>
