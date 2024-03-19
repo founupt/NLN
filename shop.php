@@ -1,6 +1,18 @@
+<!-- add cart -->
 <?php
-$actitive = "shop";
-@include('header.php');
+
+	$actitive = "shop";
+	@include('header.php');
+	
+	if(isset($_GET['add-to-cart'])){
+		$MA_MA=$_GET['add-to-cart'];
+		$MA_SL=1;
+
+	//insert table//
+	$addcart = $ct->add_cart($MA_SL, $MA_MA);
+	}
+
+	
 ?>
     <!-- END nav -->
 
@@ -50,12 +62,17 @@ $actitive = "shop";
 						
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
+									
 								<a href="chitietmonan.php?maid=<?php echo ($result['MA_MA'])?>" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
+									<form method="post" action="">
+										<input type="hidden" name="ma_mon_an" Value="<?php echo ($result['MA_MA'])?>">
+										<a class="heart d-flex justify-content-center align-items-center " href="shop.php?add-to-cart=<?php echo $result['MA_MA'] ?>">
+											<span><i class="ion-ios-cart"></i></span>
+										</a>
+									</form>
+									
 	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
 	    								<span><i class="ion-ios-heart"></i></span>
 	    							</a>

@@ -12,8 +12,9 @@ if (!isset($_GET['maid']) || $_GET['maid'] == NULL) {
 	$id = $_GET['maid'];
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-	$GH_SL = $_POST['GH_SL'];
-	$addcart = $ct->add_cart($GH_SL, $id);
+	$MA_SL = $_POST['MA_SL'];
+	$MA_MA = $_POST['MA_MA'];
+	$addcart = $ct->add_cart($MA_SL, $MA_MA);
 	if (isset($addcart)) {
 		echo $addcart;
 	}
@@ -43,8 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 						<p class="price"><span><?php echo number_format($result['MA_GIA']) . ' ' . 'vnđ' ?></span></p>
 						<p><?php echo $result['MA_MOTA'] ?></p>
 						<form method="POST" action="">
+							<input type="hidden" name="MA_MA" Value="<?php echo ($result['MA_MA'])?>">
 								<div class="input-group col-md-6 d-flex mb-3">
-									<input type="number" id="quantity" name="GH_SL" class="form-control" value="1" min="1" max="100">
+									<input type="number" name="MA_SL" class="form-control" value="1" min="1" max="100">
 								</div>
 								<div class="col-md-12">
 									<button type="submit" class="btn" name="submit">Thêm vào giỏ hàng</button>
