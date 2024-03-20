@@ -11,7 +11,7 @@
 	//insert table//
 	$addcart = $ct->add_cart($MA_SL, $MA_MA);
 	}
-
+	
 	
 ?>
     <!-- END nav -->

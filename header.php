@@ -22,6 +22,16 @@
 	$ct = new cart();
 	$cs = new customers();
 ?>
+
+<?php
+if(!isset($_SESSION['HD_MA'])) {
+		$addorder = $ct->add_order();
+		
+	}
+	else {
+		$HD_MA = $_SESSION['HD_MA'];
+	}
+?>
 <!DOCTYPE HTML>
 <HTML lang="en">
   <head>

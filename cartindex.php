@@ -1,7 +1,6 @@
 <?php
 $active = "cart";
 @include('header.php');
-
 //Cập nhật số lượng món ăn
 if (isset($_POST['update_product_quantity'])){
     $update_value = $_POST['update_quantity_MA_SL'];
@@ -145,7 +144,7 @@ if (isset($_GET['remove'])){
                     
                 </table>
                      <h4>
-                        <a href="pay.php">THANH TOÁN</a>
+                        <a href="payment.php">THANH TOÁN</a>
                     </h4>
             </div>
         </div>

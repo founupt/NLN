@@ -2,13 +2,22 @@
 session_start();
 $active = "pay";
 @include('header.php');
+	
 ?>
 <?php
-if (isset($_GET['GH_MA']) && $_GET['GH_MA']=='GH_MA' ) {
-	$id = Session::get('KH_MA');
-	$get_customers = $cs->get_customersid($id);
-	$insert_order = $ct->insert_order($id);
+if (isset($_GET['HD_MA']) && !empty($_GET['HD_MA'])) {
+	$KH_MA = Session::get('KH_MA');
+	$HD_MA = Session::get('HD_MA');
+	$insert_order = $ct->insert_order($HD_MA,$KH_MA);
 }
+
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+// 	$KH_MA = Session::get('KH_MA');
+// 	$HD_MA = Session::get('HD_MA');
+// 	$get_customers = $cs->get_customersid($KH_MA);
+// 	$insert_order = $ct->insert_order($HD_MA);
+// }
 ?> 
 
 <?php
@@ -80,7 +89,7 @@ if ($login_check == false) {
 			<!-- Order Details -->
 		
           <div class="col-md-6 order-md-last d-flex">
-		  	<form class="bg-white p-5 contact-form">
+		  	<form class="bg-white p-5 contact-form" method="POST" action="">
 
 					<h3 class="title">Đơn hàng của bạn</h3>
 				
@@ -96,13 +105,13 @@ if ($login_check == false) {
 								<div class="order-col">
 								<p class="form-control1">
 									<?php 
-										echo "Số lượng món: " . $result['GH_SL'] . " phần " . $result['MA_TEN'];
+										echo "Số lượng món: " . $result['MA_SL'] . " phần " . $result['MA_TEN'];
 									?>
 								</p>
 
 								<p class="form-control1">
 										<?php 
-											$total = $result['MA_GIA'] * $result['GH_SL'];
+											$total = $result['MA_GIA'] * $result['MA_SL'];
 											echo "Giá tiền: " . number_format($total) . " VNĐ";
 										?>
 									</p>
@@ -110,9 +119,10 @@ if ($login_check == false) {
 								</div>
 							</div>
 					<?php
-							$subtotal += $total;
-							$sl = $sl + $result['GH_SL'];
+						$subtotal += $total;
+						$sl = $sl + $result['MA_SL'];
 						}
+						
 					}
 					?>
 
@@ -175,7 +185,8 @@ if ($login_check == false) {
 					</label>
 				</div>
 				<h4>
-					<a href="?GH_MA=GH_MA" name="GH_MA" class="primary-btn order-submit">Đặt hàng</a>
+					<!-- <button type="submit" name="HD_MA" class="primary-btn order-submit">Đặt hàng</button> -->
+					<a href="?HD_MA=<?php echo ($_SESSION['HD_MA'])?>" name="HD_MA" class="primary-btn order-submit">Đặt hàng</a>
 				</h4>
 					</form>
 					
