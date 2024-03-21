@@ -59,7 +59,7 @@
 					?>
     		<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="chitietmonan.php?maid=<?php echo ($result['MA_MA'])?>" class="img-prod"><img class="img-fluid" src="../food/images/<?php echo $result['MA_HINHANH']?>" alt="Colorlib Template">
+    					<a href="chitietmonan.php?maid=<?php echo ($result['MA_MA'])?>" class="img-prod"><img class="img-fluid" src="./images/<?php echo $result['MA_HINHANH']?>" alt="Colorlib Template">
     						<span class="status">30%</span>
     						<div class="overlay"></div>
     					</a>
