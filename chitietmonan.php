@@ -15,12 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 	$MA_SL = $_POST['MA_SL'];
 	$MA_MA = $_POST['MA_MA'];
 	$addcart = $ct->add_cart($MA_SL, $MA_MA);
-	if (isset($addcart)) {
-		echo $addcart;
-	}
 }
-
-
 ?>
 
 <section class="ftco-section">

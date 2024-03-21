@@ -1,6 +1,7 @@
 <?php
 $active = "cart";
 @include('header.php');
+
 //Cập nhật số lượng món ăn
 if (isset($_POST['update_product_quantity'])){
     $update_value = $_POST['update_quantity_MA_SL'];
@@ -18,6 +19,12 @@ if (isset($_GET['remove'])){
     //echo $delete_product;
 };
 
+?>
+<?php
+$login_check = Session::get('customer_login');
+if ($login_check == false) {
+	header('Location:contact.php');
+}
 ?>
 <!-- Nội dung trang -->
 <div class="hero-wrap hero-bread" style="background-image: url('images/br.jpg');">

@@ -21,9 +21,18 @@ class cart
         $insert_hoadon = "INSERT INTO hoadon (KH_MA) 
             VALUES ('$KH_MA')";
         $insert_cart = $this->db->insert($insert_hoadon);
-        $query_HD_MA = "SELECT MAX(HD_MA) as MAX_HD_MA FROM hoadon WHERE KH_MA = '$KH_MA' ";
+        $query_HD_MA = "SELECT MAX(HD_MA) as MAX_HD_MA FROM hoadon";
         $result_HD_MA = $this->db->select($query_HD_MA)->fetch_assoc();
         $set_HD_MA = Session::set('HD_MA',$result_HD_MA['MAX_HD_MA']);
+    }
+
+    public function check_order(){
+        $KH_MA = Session::get('KH_MA');
+        $HD_MA = Session::get('HD_MA');
+
+        $select_order = $this->db->select("SELECT * FROM hoadon 
+        WHERE KH_MA = '$KH_MA' AND HD_MA = '$HD_MA'")->fetch_assoc();
+        return $select_order;
     }
 
     public function add_cart($MA_SL, $MA_MA)
@@ -34,7 +43,7 @@ class cart
         $KH_MA      = Session::get('KH_MA');
         $HD_MA      = Session::get('HD_MA');
 
-        $query_valid = "SELECT * FROM bao_gom WHERE MA_MA = '$MA_MA'";
+        $query_valid = "SELECT * FROM bao_gom WHERE MA_MA = '$MA_MA' AND HD_MA = '$HD_MA'";
         $check_valid =  $this->db->select($query_valid);
         //Kiểm tra đã có món ăn này chưa
         //Nếu có thì cập nhật số lượng của món ăn này
@@ -135,6 +144,20 @@ class cart
         $query = "DELETE FROM bao_gom WHERE HD_MA = '$HD_MA'";
         $result = $this->db->select($query);
         return $result;
+    }
+
+    public function del_empty_cart()
+    {
+       
+        $query_empty_cart = "SELECT * FROM hoadon WHERE HD_SL = '0' AND HD_GIA = '0'";
+        $select_empty_cart = $this->db->select($query_empty_cart);
+        if ($select_empty_cart){
+            while ($result_empty_cart = $select_empty_cart->fetch_assoc()){
+                $HD_MA = $result_empty_cart['HD_MA'];
+                $query = "DELETE FROM hoadon WHERE HD_MA = '$HD_MA'";
+                $result = $this->db->select($query);
+            }
+        }
     }
 
     public function insert_order($HD_MA,$KH_MA) {

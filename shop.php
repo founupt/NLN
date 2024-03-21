@@ -5,11 +5,22 @@
 	@include('header.php');
 	
 	if(isset($_GET['add-to-cart'])){
-		$MA_MA=$_GET['add-to-cart'];
-		$MA_SL=1;
+		// $MA_MA=$_GET['add-to-cart'];
+		// $MA_SL=1;
+		// //insert table//
+		// $addcart = $ct->add_cart($MA_SL, $MA_MA);
 
-	//insert table//
-	$addcart = $ct->add_cart($MA_SL, $MA_MA);
+		$login_check = Session::get('customer_login');
+		if ($login_check) {
+			$MA_MA=$_GET['add-to-cart'];
+			$MA_SL=1;
+			//insert table//
+			$addcart = $ct->add_cart($MA_SL, $MA_MA);
+		}
+		else {
+			header('Location:contact.php');
+		}
+		
 	}
 	
 	

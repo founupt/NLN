@@ -2,7 +2,7 @@
 	// @include('config/config.php');
 	@include('lib/session.php');
 	session::init();
-
+	
 	// session::check_Customer_Session();
 
 ?>
@@ -22,8 +22,15 @@
 	$ct = new cart();
 	$cs = new customers();
 ?>
-
 <?php
+
+
+if(!isset($_SESSION['KH_MA'])) {
+	$_SESSION['KH_MA']=8;
+	}
+?>
+<?php
+
 if(!isset($_SESSION['HD_MA'])) {
 		$addorder = $ct->add_order();
 		
@@ -31,6 +38,9 @@ if(!isset($_SESSION['HD_MA'])) {
 	else {
 		$HD_MA = $_SESSION['HD_MA'];
 	}
+
+	
+	
 ?>
 <!DOCTYPE HTML>
 <HTML lang="en">
@@ -127,3 +137,7 @@ if(!isset($_SESSION['HD_MA'])) {
 	    </div>
 	  </nav>
     <!-- END nav -->
+<?php
+	// echo Session::get('KH_MA');
+	// echo Session::get('HD_MA');
+?>

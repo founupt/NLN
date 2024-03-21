@@ -75,6 +75,8 @@ if (!$conn) {
         $KH_PASS = $_POST["KH_PASS"];
         
         $login_check = $class->login_customers ($KH_USERNAME, $KH_PASS);
+        unset($_SESSION['HD_MA']);
+        $del_empty_cart = $ct->del_empty_cart();
     }
 	?>
     <div class="hero-wrap hero-bread" style="background-image: url('images/br.jpg');">
