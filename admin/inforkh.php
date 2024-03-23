@@ -8,16 +8,20 @@
 ?>
 <?php
     $us = new user();
-    
+    if (isset($_GET['userid'])) {
+        $id = $_GET['userid'];
+		$delete_user = $us -> delete_user($id);
+    }
 ?>
 <?php
     $db = new Database();
 ?>
+
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Thông tin khách hàng</h2>
         <div class="block">               
-         <form>
+         <!-- <form> -->
             <table class="data display datatable" id="example">					
             <thead>
 				<tr>
@@ -57,8 +61,15 @@
 			?>
 			</tbody>	 
             </table>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setupLeftMenu();
+        $('.datatable').dataTable();
+		setSidebarHeight();
+    });
+</script>
 <?php include 'inc/footer.php';?>

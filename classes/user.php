@@ -127,6 +127,19 @@ if ($KH_DIACHI == "" || $KH_TEN == "" || $KH_SDT == "" || $KH_EMAIL == "" ) {
         $result = $this->db->select($query);
         return $result;
     }
+
+    public function delete_user($id) {
+        $query = "DELETE FROM khachhang WHERE KH_MA = '$id'";
+        $result = $this->db->delete($query);
+        if($result){
+            $alert = "<span class='success'> Xóa người dùng thành công!</span>"; 
+            return $alert; 
+        }else{
+            $alert = "<span class='error'> Xóa người dùng thất bại!!!</span>";
+            return $alert; 
+        }   
+    }
 }
+
 
 ?>

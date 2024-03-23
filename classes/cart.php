@@ -214,7 +214,16 @@ class cart
         return $result;
     }
 
+    
+    public function show_pay (){
+        $query = "SELECT * from hoadon";
+        $result = $this->db->select($query);
+        return $result;
+    }
 }
+
+
+
 
 // public function get_ma(){
 //     $HD_MA = $get_product["GH_MA"];
