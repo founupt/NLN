@@ -1,5 +1,6 @@
 <?php
-$active = "cart";
+ob_start();
+$active = "cartindex";
 @include('header.php');
 
 //Cập nhật số lượng món ăn
@@ -18,8 +19,8 @@ if (isset($_GET['remove'])){
     $delete_product = $ct->delete_cart($delete_value);
     //echo $delete_product;
 };
-
 ?>
+
 <?php
 $login_check = Session::get('customer_login');
 if ($login_check == false) {

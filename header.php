@@ -23,8 +23,6 @@
 	$cs = new customers();
 ?>
 <?php
-
-
 if(!isset($_SESSION['KH_MA'])) {
 	$_SESSION['KH_MA']=8;
 	}
@@ -107,14 +105,15 @@ if(!isset($_SESSION['HD_MA'])) {
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-			<form action="#" class="search-form">
-                <div class="form-group">
-                  <span class="icon ion-ios-search"></span>
-                  <input type="text" class="form-control" placeholder="Search...">
-                </div>
-              </form>
-	          <li class="nav-item"><a href="index.php" class="nav-link">Trang chủ</a></li>
-			  <li class="nav-item"><a href="shop.php" class="nav-link">Món ăn</a></li>
+				<div class="form-group">
+					<form action="product-single.php" method="GET">
+						<input class="input" name="timkiem" placeholder="Tìm món ăn...">
+						<button type="submit" class="search-btn">Tìm kiếm</button>
+					</form>
+				</div>
+		
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Trang chủ</a></li>
+			  <li class="nav-item active"><a href="shop.php" class="nav-link">Món ăn</a></li>
 	         
 	          <li class="nav-item active"><a href="cartindex.php" class="nav-link">Giỏ hàng</a></li>
 	          
@@ -122,8 +121,7 @@ if(!isset($_SESSION['HD_MA'])) {
 				<?php
 					$login = session::get ('customer_login');
 					if($login == false) {
-						echo '	<a class="nav-link" href="congtacvien/login.php" >Đăng nhập cộng tác viên</a>
-								
+						echo '									
 								<li class="nav-item"><a href="contact.php" class="nav-link">Đăng nhập</a></li>';
 					}	
 					else {
@@ -136,8 +134,21 @@ if(!isset($_SESSION['HD_MA'])) {
 
 	    </div>
 	  </nav>
+
+	  <!-- <script>
+function searchFood() {
+    // Get the search keyword
+    var keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+    
+    // Perform search logic here (replace with your own logic)
+    // For demonstration, I'll just display a message with the searched keyword
+    var searchResults = document.getElementById("searchResults");
+    searchResults.innerHTML = "<p>Kết quả tìm kiếm cho: <strong>" + keyword + "</strong></p>";
+}
+</script> -->
     <!-- END nav -->
 <?php
+// <a class="nav-link" href="congtacvien/login.php" >Đăng nhập cộng tác viên</a>
 	// echo Session::get('KH_MA');
 	// echo Session::get('HD_MA');
 ?>

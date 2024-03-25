@@ -160,5 +160,17 @@ class product
         return $result;
     }
 
-}
+    
+        public function searchProduct($keyword) {
+      
+           
+            $sql = "SELECT * FROM monan WHERE MA_TEN LIKE '%$keyword%' LIMIT 1";
+    
+            // Thực hiện truy vấn
+            $result =$this->db->select($sql);
+            return $result;
+        }
+    
+    }
+    
 ?>
