@@ -15,6 +15,17 @@ $actitive = "product-single";
       </div>
     </div> 
 
+	<?php
+if (!isset($_GET['maid']) || $_GET['maid'] == NULL) {
+} else {
+	$id = $_GET['maid'];
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+	$MA_SL = $_POST['MA_SL'];
+	$MA_MA = $_POST['MA_MA'];
+	$addcart = $ct->add_cart($MA_SL, $MA_MA);
+}
+?>
 <section class="ftco-section">
 	<div class="container">
 		<div class="row">

@@ -2,8 +2,8 @@
 	// @include('config/config.php');
 	@include('lib/session.php');
 	session::init();
+	ob_start()
 	
-	// session::check_Customer_Session();
 
 ?>
 <?php
@@ -44,7 +44,7 @@ if(!isset($_SESSION['HD_MA'])) {
 <HTML lang="en">
   <head>
   <!-- <link rel="icon" href="images/12.png" type="image/x-icon"> -->
-  <link rel="icon" type="" sizes="16x16"  href="images/foxfood.png">
+  <link rel="icon" type="" sizes="16x16"  href="images/NLNLOGO.png">
 
     <title>FOXFOOD</title>
 	

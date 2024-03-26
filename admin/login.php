@@ -30,10 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 			?></span>
 			<div>
-				<input type="text" placeholder="Username"  name="AD_username"/>
+				<input type="text" placeholder="tendangnhap"  name="AD_username"/>
 			</div>
 			<div>
-				<input type="password" placeholder="Password"  name="AD_password"/>
+				<input type="password" placeholder="matkhau"  name="AD_password"/>
 			</div>
 			<div>
 				<input type="submit" value="Đăng nhập" />
