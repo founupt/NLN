@@ -32,7 +32,7 @@ if ($login_check == false) {
 		<div class="row no-gutters slider-text align-items-center justify-content-center">
 			<div class="col-md-9 ftco-animate text-center">
 				<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>PAYMENT</span></p>
-				<h1 class="mb-0 bread">PAYMENT</h1>
+				<h1 class="mb-0 bread">THANH TOÁN</h1>
 			</div>
 		</div>
 	</div>

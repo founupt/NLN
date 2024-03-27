@@ -116,7 +116,8 @@ if(!isset($_SESSION['HD_MA'])) {
 			  <li class="nav-item active"><a href="shop.php" class="nav-link">Món ăn</a></li>
 	         
 	          <li class="nav-item active"><a href="cartindex.php" class="nav-link">Giỏ hàng</a></li>
-	          
+			  <li class="nav-item active"><a href="showhoadon.php" class="nav-link">Đơn hàng </a></li>
+
 			  <li class="nav-item dropdown">
 				<?php
 					$login = session::get ('customer_login');

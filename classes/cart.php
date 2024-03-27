@@ -220,16 +220,22 @@ class cart
         $result = $this->db->select($query);
         return $result;
     }
+
+
+
+
+public function showhoadon(){
+    $KH_MA = $_SESSION['KH_MA'];
+
+    $sql = "SELECT ho.HD_MA, ho.HD_GIA, ho.KH_MA, ma.MA_TEN, ho.HD_SL
+    FROM hoadon ho 
+    INNER JOIN bao_gom bg ON bg.HD_MA = ho.HD_MA
+    INNER JOIN monan ma ON bg.MA_MA = ma.MA_MA
+    where KH_MA = '$KH_MA' ";
+
+$result = $this->db->select($sql);
+        return $result;
+
 }
-
-
-
-
-// public function get_ma(){
-//     $HD_MA = $get_product["GH_MA"];
-//     $query = "SELECT * FROM chitietgiohan WHERE HD_MA = '$HD_MA' "; 
-//     $result = $this->db->select($query);
-//     return $result;
-// }
-// }
+}
 ?>

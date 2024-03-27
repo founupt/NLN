@@ -33,8 +33,8 @@ if ($login_check == false) {
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9  text-center">
           	<!-- <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span></p> -->
-            <h1 class="mb-0 bread"><span class="mr-2"><a href="index.php">Home |</a></span>Cart</h1>
-            <h1 class="mb-0 bread">My Cart</h1> 
+            <h1 class="mb-0 bread"><span class="mr-2"><a href="index.php">TRANG CHỦ |</a></span>GIỎ HÀNG</h1>
+            <h1 class="mb-0 bread">GIỎ HÀNG CỦA T</h1> 
           </div>
         </div>
       </div>
