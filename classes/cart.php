@@ -224,18 +224,58 @@ class cart
 
 
 
-public function showhoadon(){
-    $KH_MA = $_SESSION['KH_MA'];
-
-    $sql = "SELECT ho.HD_MA, ho.HD_GIA, ho.KH_MA, ma.MA_TEN, ho.HD_SL
-    FROM hoadon ho 
-    INNER JOIN bao_gom bg ON bg.HD_MA = ho.HD_MA
-    INNER JOIN monan ma ON bg.MA_MA = ma.MA_MA
-    where KH_MA = '$KH_MA' ";
-
-$result = $this->db->select($sql);
+    public function showhoadon() {
+        $KH_MA = $_SESSION['KH_MA'];
+    
+        $sql = "SELECT ho.HD_MA, ho.HD_GIA, ho.KH_MA, ma.MA_TEN, ho.HD_SL, ho.HD_TRANGTHAI
+                FROM hoadon ho 
+                INNER JOIN bao_gom bg ON bg.HD_MA = ho.HD_MA
+                INNER JOIN monan ma ON bg.MA_MA = ma.MA_MA
+                WHERE KH_MA = '$KH_MA'";
+    
+        $result = $this->db->select($sql);
         return $result;
+    }
+    
 
+
+function hienThiTrangThaiDonHang($HD_MA, $conn) {
+    $sql = "SELECT * FROM hoadon WHERE HD_MA = $HD_MA";
+    $result = $this->db->select($sql);
+
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $status = $row['HD_TRANGTHAI'];
+        // Hiển thị trạng thái đơn hàng dựa trên trạng thái đã truy xuất
+        switch ($status) {
+            case 0:
+                echo '
+                      
+                        <h3>Chưa có đơn hàng</h3>
+                        <span>Vào giỏ hàng để thanh toán</span>
+            ';
+                break;
+            case 1:
+                echo '
+              
+               
+                <h3>Đã đặt</h3>
+                <span>Đang thực hiện</span>
+            ';
+                break;
+            case 2:
+                echo '
+                <h3>Đã hủy</h3>
+            ';
+                break;
+            default:
+                // Xử lý trạng thái không xác định
+                echo 'Trạng thái không xác định';
+        }
+    } else {
+        echo 'Không tìm thấy đơn hàng';
+    }
 }
+
 }
 ?>

@@ -153,14 +153,14 @@ if (!$conn) {
               </span>
               <div class="form-group">
               
-                <p>Username:</p>
+                <p>Tên đăng nhập: </p>
                 <span><input type="text" class="form-control" id="KH_USERNAME" name="KH_USERNAME" placeholder="Tên đăng nhập" /></span>
               </div>
               <div class="form-group">
               
               </div>
               <div class="form-group">
-              <p>Password:</p>
+              <p>Mật khẩu:</p>
               <input type="password" class="form-control" id="KH_PASS" name="KH_PASS" placeholder="Mật khẩu" />
               </div>
               

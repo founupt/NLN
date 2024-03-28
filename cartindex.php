@@ -34,7 +34,7 @@ if ($login_check == false) {
           <div class="col-md-9  text-center">
           	<!-- <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span></p> -->
             <h1 class="mb-0 bread"><span class="mr-2"><a href="index.php">TRANG CHỦ |</a></span>GIỎ HÀNG</h1>
-            <h1 class="mb-0 bread">GIỎ HÀNG CỦA T</h1> 
+            <h1 class="mb-0 bread">GIỎ HÀNG CỦA TÔI</h1> 
           </div>
         </div>
       </div>
@@ -163,36 +163,3 @@ if ($login_check == false) {
 ?>
 <!-- <tbody>
                           
-                            <tr class="text-center">
-                                <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-                                <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
-                                <td class="product-name">
-                                    <h3>Gỏi cuốn </h3>
-                                    <p>*Note: thêm nước chấm, không để hành</p>
-                                </td>
-                                <td class="price">6.000vnd</td>
-                                <td class="quantity">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                    </div>
-                                </td>
-                                <td class="total">6.000vnd</td>
-                            </tr>
-                           
-                            <tr class="text-center">
-                                <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-                                <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
-                                <td class="product-name">
-                                    <h3>Bún đậu mắm tôm 3 Phải</h3>
-                                    <p>*Note: Thêm rau, nước chấm mắm chua.</p>
-                                </td>
-                                <td class="price">65.000vnd</td>
-                                <td class="quantity">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                    </div>
-                                </td>
-                                <td class="total">65.000vnd</td>
-                            </tr>
-                        
-</tbody> -->

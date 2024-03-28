@@ -2227,12 +2227,12 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545; }
+  background-color:tan;
+  border-color:tan ; }
   .btn-danger:hover {
     color: #fff;
-    background-color: #c82333;
-    border-color: #bd2130; }
+    background-color:#b3d7ff;
+    border-color: #b3d7ff; }
   .btn-danger:focus, .btn-danger.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
@@ -8275,7 +8275,7 @@ h1, h2, h3, h4, h5,
       font-weight: 800;
       color: #fff;
       font-size: 30px;
-      font-family: "Poppins", Arial, sans-serif;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       letter-spacing: 3px;
       text-transform: uppercase; }
     .hero-wrap .slider-text .btn-primary {
