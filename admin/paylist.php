@@ -35,7 +35,7 @@
                         <?php
                         $conn = new mysqli("localhost", "root", "", "food"); // Khai báo biến $conn ở đây
                         $cart = new cart();
-                        $pay_list = $cart->showhoadon(); // Hàm get_pay_list() là một phương thức trong lớp Pay để lấy danh sách hóa đơn
+                        $pay_list = $cart->showhoadon_admin(); // Hàm get_pay_list() là một phương thức trong lớp Pay để lấy danh sách hóa đơn
                         if ($pay_list) {
                             $i=0;
                             while ($pay_item = $pay_list->fetch_assoc()) {

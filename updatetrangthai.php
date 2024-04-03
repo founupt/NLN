@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE hoadon SET HD_TRANGTHAI = $HD_TRANGTHAI WHERE HD_MA = $HD_MA";
 
     if ($conn->query($sql) === TRUE) {
-        // Đóng kết nối
         $conn->close();
         echo "<script>alert('Cập nhật trạng thái thành công'); window.location.href = 'showhoadon.php';</script>";
     } else {

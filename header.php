@@ -29,6 +29,7 @@ if(!isset($_SESSION['KH_MA'])) {
 ?>
 <?php
 
+
 if(!isset($_SESSION['HD_MA'])) {
 		$addorder = $ct->add_order();
 		
@@ -37,6 +38,7 @@ if(!isset($_SESSION['HD_MA'])) {
 		$HD_MA = $_SESSION['HD_MA'];
 	}
 
+	
 	
 	
 ?>

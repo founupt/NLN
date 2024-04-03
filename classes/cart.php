@@ -166,7 +166,6 @@ class cart
         $HD_SL = 0;
         $HD_GIA = 0;
     
-        // Kiểm tra và lấy thông tin sản phẩm từ giỏ hàng
         $query_bao_gom = "      SELECT * FROM bao_gom
                                 JOIN monan ON monan.MA_MA = bao_gom.MA_MA
                                 WHERE HD_MA = '$HD_MA'";
@@ -179,11 +178,9 @@ class cart
                 $HD_GIA += $MA_GIA;
             }
             $HD_GIA = $HD_GIA * 1.1;
-            // Kiểm tra xem hóa đơn đã tồn tại hay chưa
             $query_check_order = "SELECT * FROM hoadon WHERE HD_MA = '$HD_MA' AND KH_MA = '$KH_MA'";
             $check_order_result = $this->db->select($query_check_order);
             if ($check_order_result && $check_order_result->num_rows > 0){
-                // Cập nhật tổng số sản phẩm và tổng tiền
                 $query_order = "UPDATE hoadon SET HD_SL = '$HD_SL', HD_GIA = '$HD_GIA' WHERE HD_MA = '$HD_MA' AND KH_MA = '$KH_MA'";
                 $update_order = $this->db->insert($query_order);
                 
@@ -224,14 +221,21 @@ class cart
 
 
 
+    public function showhoadon_admin() {
+        $sql = "SELECT ho.HD_MA, ho.HD_GIA, ho.KH_MA, ho.HD_SL, ho.HD_TRANGTHAI
+                FROM hoadon ho
+                WHERE ho.HD_GIA != '0' AND ho.HD_SL != '0'";
+    
+        $result = $this->db->select($sql);
+        return $result;
+    }
+    
     public function showhoadon() {
         $KH_MA = $_SESSION['KH_MA'];
     
-        $sql = "SELECT ho.HD_MA, ho.HD_GIA, ho.KH_MA, ma.MA_TEN, ho.HD_SL, ho.HD_TRANGTHAI
+        $sql = "SELECT ho.HD_MA, ho.HD_GIA, ho.KH_MA, ho.HD_SL, ho.HD_TRANGTHAI
                 FROM hoadon ho 
-                INNER JOIN bao_gom bg ON bg.HD_MA = ho.HD_MA
-                INNER JOIN monan ma ON bg.MA_MA = ma.MA_MA
-                WHERE KH_MA = '$KH_MA'";
+                WHERE KH_MA = '$KH_MA' AND ho.HD_GIA != '0' AND ho.HD_SL != '0' ";
     
         $result = $this->db->select($sql);
         return $result;

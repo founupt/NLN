@@ -5,7 +5,6 @@ $active = "showhoadon";
 
 $conn = new mysqli("localhost", "root", "", "food");
 
-// Kiểm tra kết nối có thành công không
 if ($conn->connect_error) {
     die("Kết nối cơ sở dữ liệu thất bại: " . $conn->connect_error);
 }
@@ -50,7 +49,6 @@ if ($login_check == false) {
                             <tr class="text-center">
                                 <th>&nbsp;</th>
                                 <th>Mã hóa đơn</th>
-                                <th>Tên sản phẩm</th>
                                 <th>Số Lượng</th>
                                 <th>Tổng tiền sản phẩm</th>
                                 <th>Trạng thái</th>
@@ -69,12 +67,11 @@ if ($login_check == false) {
                                     <tr class="odd gradeX">
                                         <td><?php echo $i ?></td>
                                         <td><?php echo $pay_item['HD_MA']; ?></td>
-                                        <td><?php echo $pay_item['MA_TEN']; ?></td>
                                         <td><?php echo $pay_item['HD_SL']; ?></td>
                                         <td><?php echo $pay_item['HD_GIA']; ?></td>
-                                        <td><?php echo $cart->hienThiTrangThaiDonHang($HD_MA, $conn); ?></td>
+                                        <td><?php echo $cart->hienThiTrangThaiDonHang($pay_item['HD_MA'], $conn); ?></td>
                                         <td>
-                                            <?php if ($trangThai == 0): ?>
+                                            <?php if ($pay_item['HD_TRANGTHAI'] == 0): ?>
                                                 <form action="updatetrangthai.php" method="post"> 
                                                     <input type="hidden" name="HD_MA" value="<?php echo $pay_item['HD_MA']; ?>">
                                                     <input type="hidden" name="HD_TRANGTHAI" value="1"> 
