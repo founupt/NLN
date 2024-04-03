@@ -24,6 +24,11 @@ if ($login_check == false) {
 }
 
 ?>
+<script>
+    <?php if (isset($_GET['success']) && $_GET['success'] == true): ?>
+        alert('Cập nhật trạng thái thành công');
+    <?php endif; ?>
+</script>
 
 <div class="hero-wrap hero-bread" style="background-image: url('images/br.jpg');">
     <div class="container">
@@ -69,13 +74,15 @@ if ($login_check == false) {
                                         <td><?php echo $pay_item['HD_GIA']; ?></td>
                                         <td><?php echo $cart->hienThiTrangThaiDonHang($HD_MA, $conn); ?></td>
                                         <td>
-                                            <?php if ($trangThai == 1 ): ?>
-                                                <form action="xulyhuydathang.php" method="post">
+                                            <?php if ($trangThai == 0): ?>
+                                                <form action="updatetrangthai.php" method="post"> 
                                                     <input type="hidden" name="HD_MA" value="<?php echo $pay_item['HD_MA']; ?>">
+                                                    <input type="hidden" name="HD_TRANGTHAI" value="1"> 
                                                     <button type="submit" class="btn btn-danger">Hủy</button>
                                                 </form>
                                             <?php endif; ?>
                                         </td>
+
                                     </tr>
                             <?php
                                 }

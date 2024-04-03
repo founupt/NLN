@@ -249,23 +249,21 @@ function hienThiTrangThaiDonHang($HD_MA, $conn) {
         // Hiển thị trạng thái đơn hàng dựa trên trạng thái đã truy xuất
         switch ($status) {
             case 0:
-                echo '
-                      
-                        <h3>Chưa có đơn hàng</h3>
-                        <span>Vào giỏ hàng để thanh toán</span>
+                echo '  
+                     
+                <h3>Đã đặt</h3>
+                <span>Đang thực hiện</span>
             ';
                 break;
             case 1:
                 echo '
-              
-               
-                <h3>Đã đặt</h3>
+                <h3>Đang chờ hủy</h3>
                 <span>Đang thực hiện</span>
             ';
                 break;
             case 2:
                 echo '
-                <h3>Đã hủy</h3>
+                <h3>Đã hoàn thành </h3>
             ';
                 break;
             default:

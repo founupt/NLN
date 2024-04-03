@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 20, 2024 lúc 12:31 AM
+-- Thời gian đã tạo: Th4 03, 2024 lúc 05:19 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -54,6 +54,17 @@ CREATE TABLE `bao_gom` (
   `MA_MA` int(10) NOT NULL,
   `MA_SL` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `bao_gom`
+--
+
+INSERT INTO `bao_gom` (`BG_MA`, `HD_MA`, `MA_MA`, `MA_SL`) VALUES
+(38, 1555037804, 10, 51),
+(39, 1555037804, 9, 5),
+(40, 1555037804, 11, 2),
+(42, 1555037812, 7, 1),
+(43, 1555037861, 10, 4);
 
 -- --------------------------------------------------------
 
@@ -141,8 +152,19 @@ INSERT INTO `feedback` (`FB_MA`, `FB_TEN`, `FB_NOIDUNG`) VALUES
 CREATE TABLE `hoadon` (
   `HD_MA` int(10) NOT NULL,
   `KH_MA` int(10) NOT NULL,
-  `HD_SL` int(11) NOT NULL
+  `HD_SL` int(11) NOT NULL,
+  `HD_GIA` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoadon`
+--
+
+INSERT INTO `hoadon` (`HD_MA`, `KH_MA`, `HD_SL`, `HD_GIA`) VALUES
+(1555037804, 1, 12, 447700),
+(1555037812, 1, 1, 132000),
+(1555037861, 1, 4, 118800),
+(1555037864, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -171,7 +193,8 @@ INSERT INTO `khachhang` (`KH_MA`, `KH_USERNAME`, `KH_PASS`, `KH_DIACHI`, `KH_TEN
 (4, 'phuongthu', '123', '123', 'NPT', 123456789, 'thu2@gmail.com'),
 (5, 'thuph', '123', '123', 'Lý Trọng Nhân', 123456789, 'tn@gmail.com'),
 (6, 'lengoc', '123', '123', 'Lê Ngọc', 123456789, 'lengoc@gmail.com'),
-(7, 'linh', '123', 'Cần Thơ', 'Linh', 912345678, 'linh@gmail.com');
+(7, 'linh', '123', 'Cần Thơ', 'Linh', 912345678, 'linh@gmail.com'),
+(8, NULL, NULL, NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -366,7 +389,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `bao_gom`
 --
 ALTER TABLE `bao_gom`
-  MODIFY `BG_MA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `BG_MA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT cho bảng `feedback`
@@ -378,13 +401,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `HD_MA` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1555037803;
+  MODIFY `HD_MA` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1555037865;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `KH_MA` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `KH_MA` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `monan`
