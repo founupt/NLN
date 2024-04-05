@@ -18,6 +18,8 @@
                 <li><a class="menuitem">Quản lý hóa đơn</a>
                     <ul class="submenu">
                         <li><a href="paylist.php">Danh sách hóa đơn</a> </li>
+                        <li><a href="thongke.php">Thống kê</a> </li>
+
                     </ul>
                 </li>
               
