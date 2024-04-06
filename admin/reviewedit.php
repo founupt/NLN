@@ -37,7 +37,7 @@
                         <label>Tiêu đề</label>
                     </td>
                     <td>
-                        <input type="text" name = "BV_TIEUDE" value="<?php echo $result_review['BV_TIEUDE']?>" class="medium" />
+                        <input type="text" name = "FB_TEN" value="<?php echo $result_review['FB_TEN']?>" class="medium" />
                     </td>
                 </tr>
 				
@@ -47,7 +47,7 @@
                         <label>Nội dung bài viết</label>
                     </td>
                     <td>
-                        <textarea name="BV_NOIDUNG" class="tinymce" <?php echo $result_review['BV_NOIDUNG']?>></textarea>
+                        <textarea name="FB_NOIDUNG" class="tinymce" <?php echo $result_review['FB_NOIDUNG']?>></textarea>
                     </td>
                 </tr>
 				<!-- <tr>
@@ -59,7 +59,7 @@
                     </td>
                 </tr>
              -->
-                <tr>
+                <!-- <tr>
                     <td>
                         <label>Hình ảnh sản phẩm</label>
                     </td>
@@ -67,7 +67,7 @@
                         <img src="../images/ <?php echo $result_review['BV_HINHANH']?>" width="80px"><br>
                         <input type="file" name="BV_HINHANH"/>
                     </td>
-                </tr>
+                </tr> -->
 
 				<!-- <tr>
                     <td>

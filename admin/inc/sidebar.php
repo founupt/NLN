@@ -12,6 +12,7 @@
                     <ul class="submenu">
                         <li><a href="addproduct.php">Thêm món ăn</a> </li>
                         <li><a href="productlist.php">Danh sách món ăn</a> </li>
+                        <li><a href="reviewlist.php">Danh sách đánh giá</a> </li>
                     </ul>
                 </li>
 

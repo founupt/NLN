@@ -21,8 +21,8 @@ $login_check = Session::get('customer_login');
 if ($login_check == false) {
     header('Location: contact.php');
 }
-
 ?>
+
 <script>
     <?php if (isset($_GET['success']) && $_GET['success'] == true): ?>
         alert('Cập nhật trạng thái thành công');
@@ -32,7 +32,7 @@ if ($login_check == false) {
 <div class="hero-wrap hero-bread" style="background-image: url('images/br.jpg');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
-            <div class="col-md-9  text-center">
+            <div class="col-md-9 text-center">
                 <h1 class="mb-0 bread"><span class="mr-2"><a href="index.php">TRANG CHỦ |</a></span>ĐƠN HÀNG</h1>
             </div>
         </div>
@@ -75,11 +75,12 @@ if ($login_check == false) {
                                                 <form action="updatetrangthai.php" method="post"> 
                                                     <input type="hidden" name="HD_MA" value="<?php echo $pay_item['HD_MA']; ?>">
                                                     <input type="hidden" name="HD_TRANGTHAI" value="1"> 
-                                                    <button type="submit" class="btn btn-danger">Hủy</button>
+                                                    <button type="submit" class="btn btn-primary">Hủy</button>
                                                 </form>
+                                            <?php elseif ($pay_item['HD_TRANGTHAI'] == 2): ?>
+                                                <a href="feedback.php?HD_MA=<?php echo $pay_item['HD_MA']; ?>&KH_MA=<?php echo $KH_MA; ?>" class="btn btn-primary">Feedback</a>
                                             <?php endif; ?>
                                         </td>
-
                                     </tr>
                             <?php
                                 }
@@ -94,5 +95,5 @@ if ($login_check == false) {
 </section>
 
 <?php
-@include("footer.php")
+@include("footer.php");
 ?>

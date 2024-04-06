@@ -21,6 +21,7 @@
 	$feedback = new feedback();
 	$ct = new cart();
 	$cs = new customers();
+	$rv = new review();
 ?>
 <?php
 if(!isset($_SESSION['KH_MA'])) {

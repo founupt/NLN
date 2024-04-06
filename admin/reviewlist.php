@@ -33,14 +33,12 @@
 				<tr>
 					<th>Mã bài đăng</th>
 					<th>Tiêu đề</th>
-					<th>Nội dung bài review</th>
-					<th>Hình ảnh bài viết</th>
+					<th>Nội dung </th>
 					<!-- <th>Mã thương hiệu sản phẩm</th>
 					<th>Mô tả sản phẩm</th>  -->
 					<!-- <th>Màu sản phẩm</th> -->
-					<th>Trạng thái món ăn</th>
 					<!-- <th>Tình trạng sản phẩm</th> -->
-					<th>Chỉnh sửa sản phẩm</th>
+					<th>Chỉnh sửa </th>
 				</tr>
 			</thead>
 			<tbody>
@@ -53,19 +51,19 @@
 			?>
 				<tr class="odd gradeX">
 					<td><?php echo $i?></td>
-					<td><?php echo $result['BV_TIEUDE']?></td>
+					<td><?php echo $result['FB_TEN']?></td>
 					<!-- <td><?php echo $result['BV_MOTA']?></td> -->
-                    <td><?php echo $result['BV_NOIDUNG']?></td>
-					<td><img src="../images/<?php echo $result['BV_HINHANH']?>" width="80px"></td>
-					<td><?php 
+                    <td><?php echo $result['FB_NOIDUNG']?></td>
+					<!-- <td><img src="../images/<?php echo $result['BV_HINHANH']?>" width="80px"></td> -->
+					<!-- <td><?php 
 						if($result['BV_TINHTRANG'] == 0){
 							echo 'Duyệt';
 						}else{
 							echo 'Không duyệt';
 						}
-					?></td>
-					<td><a href="reviewedit.php?reviewid=<?php echo $result['BV_MA'] ?>">Edit</a> || 
-					<a onclick =  "return confirm ('Bạn có chắc muốn xóa không???')" href="?reviewid=<?php echo $result['BV_MA'] ?>">Delete</a></td>
+					?></td> -->
+					<td> || 
+					<a onclick =  "return confirm ('Bạn có chắc muốn xóa không???')" href="?reviewid=<?php echo $result['FB_MA'] ?>">Delete</a></td>
 				</tr>
 			<?php
 				}
