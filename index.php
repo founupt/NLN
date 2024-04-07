@@ -1,5 +1,5 @@
 <?php
-$actitive = "index";
+$active = "index";
 @include('header.php');
 ?>
 <?php 
@@ -189,39 +189,11 @@ $actitive = "index";
 				}
 				?>
         <!-- Feedback -->
-        <?php
-        $feedback_new = $feedback -> getfeedback_new();
-        if($feedback_new) {
-          while($result_feedback = $feedback_new->fetch_assoc()){
-            ?>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="product">
-
-              
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#"><?php echo $result_feedback['FB_TEN']; ?></a></h3>
-    					</div>
-              <div>
-                <h5><a href="#"><?php echo $result_feedback['FB_NOIDUNG']; ?></a></h5>
-              </div>
-
-    				</div>	
-            </div>
-            <?php
-					}
-				}
-				?>
 
     		</div>
     	</div>
     </section>
 		
-	
-        </div>
-      </div>
-    </section>
-
-    <hr>
 
     <?php
    @include('footer.php');

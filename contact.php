@@ -115,22 +115,7 @@ if (isset($_POST["dangnhap"])) {
           <div class="form-group">
 
             <button onsubmit="showMessageBox()" class="btn btn-primary py-3 px-5" type="submit" name="dangky">Đăng kí</button>
-            <!-- <script>
-						    function showMessageBox() {
-    						var message = "Đã đăng kí thành công!";
-    						alert(message);
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('sdt').value = '';
-                document.getElementById('username').value = '';
-                document.getElementById('password').value = '';
-                var textarea = document.getElementById("address");
-                    textarea.value = "";
-                console.log(document.getElementById('address'));
-             
-							}
-              
-					    </script> -->
+       
 
           </div>
         </form>

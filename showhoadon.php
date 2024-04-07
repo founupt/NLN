@@ -78,7 +78,7 @@ if ($login_check == false) {
                                                     <button type="submit" class="btn btn-primary">Hủy</button>
                                                 </form>
                                             <?php elseif ($pay_item['HD_TRANGTHAI'] == 2): ?>
-                                                <a href="feedback.php?HD_MA=<?php echo $pay_item['HD_MA']; ?>&KH_MA=<?php echo $KH_MA; ?>" class="btn btn-primary">Feedback</a>
+                                                <a href="comment.php?HD_MA=<?php echo $pay_item['HD_MA']; ?>" class="btn btn-primary">Đánh giá</a>
                                             <?php endif; ?>
                                         </td>
                                     </tr>
