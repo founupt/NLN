@@ -39,6 +39,7 @@
 					<th>Mã bài đăng</th>
 					<th>Nội dung </th>
 					<th>Sao </th>
+					<th> Chi tiết </th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,7 +60,7 @@
 									<td><?php echo $pay_item['DG_MA']; ?></td>
                                     <td><?php echo $pay_item['DG_NOIDUNG']; ?></td>
                                     <td><?php echo $pay_item['DG_SAO']; ?></td>
-
+									<td><a href="chitietreview.php?reviewid=<?php echo $pay_item['DG_MA']; ?>">Xem chi tiết</a></td> 
                                 </tr>
 			<?php
 				}

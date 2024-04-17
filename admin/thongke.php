@@ -30,7 +30,7 @@
 
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Danh sách hóa đơn</h2>
+        <h2>Doanh thu</h2>
         <div class="block">
             <table class="data display datatable" id="example">
                 <thead>
@@ -49,7 +49,25 @@
                     if ($conn->connect_error) {
                         die("Kết nối thất bại: " . $conn->connect_error);
                     }
-
+                    $query = "SELECT KH_TEN, COUNT(HD_SL) AS TongSoLuongMua
+                            FROM HOADON INNER JOIN KHACHHANG ON HOADON.KH_MA = KHACHHANG.KH_MA
+                            INNER JOIN BAO_GOM ON HOADON.HD_MA = BAO_GOM.HD_MA
+                            GROUP BY KH_TEN
+                            ORDER BY TongSoLuongMua DESC
+                            LIMIT 1";
+                $result = $conn->query($query);
+                if (!$result) {
+                    die("Truy vấn không thành công: " . $conn->error);
+                }
+                
+                $customer_name = "";
+                $total_quantity = 0;
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $customer_name = $row['KH_TEN'];
+                    $total_quantity = $row['TongSoLuongMua'];
+                }
+                
                     // Truy vấn để lấy dữ liệu
                     $sql = "SELECT HD_NGAYLAP AS NgayLap, SUM(HD_GIA) AS TongDoanhThu
                     FROM HOADON
@@ -76,6 +94,9 @@
                     // Đóng kết nối
                     $conn->close();
                     ?>
+                    <br></br>
+                     <h2>Khách hàng mua nhiều nhất: <?php echo $customer_name; ?></h2>
+                    <h2>Tổng số đơn: <?php echo $total_quantity; ?></h2>
 
                     <script>
                         var ctx = document.getElementById('myChart').getContext('2d');

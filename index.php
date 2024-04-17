@@ -13,7 +13,7 @@ $active = "index";
 	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
 	            <div class="col-md-12 ftco-animate text-center">
-	              <h1 class="mb-2">FOODS REVIEW</h1>
+	              <h1 class="mb-2">FOXFOOD</h1>
 	              <h2 class="subheading mb-4">Đề xuất các địa điểm ăn uống hấp dẫn</h2>
 	              <p><a href="#" class="btn btn-primary">Xem chi tiết</a></p>
 	            </div>

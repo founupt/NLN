@@ -255,19 +255,19 @@ function hienThiTrangThaiDonHang($HD_MA, $conn) {
             case 0:
                 echo '  
                      
-                <h3>Đã đặt</h3>
-                <span>Đang thực hiện</span>
+                <span>Đã đặt<span>
+                
             ';
                 break;
             case 1:
                 echo '
-                <h3>Đang chờ hủy</h3>
-                <span>Đang thực hiện</span>
+                <span>Đang chờ hủy</span>
+              
             ';
                 break;
             case 2:
                 echo '
-                <h3>Đã hoàn thành </h3>
+                <span>Đã hoàn thành </span>
             ';
                 break;
             default:

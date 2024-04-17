@@ -56,13 +56,13 @@ session::checkSession();
                         <img src="../images/foxfood.png" style="width: 60px; margin-top:-15px"  alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello <?php echo session::get('AD_ten')?></li>
+                            <li>Chào, <?php echo session::get('AD_ten')?></li>
                             <?php
                             if(isset($_GET['action'])&& $_GET['action']=='logout'){
                                 session::destroy();
                             }
                             ?>
-                            <li><a href="?action=logout">Logout</a></li>
+                            <li><a href="?action=logout">Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -74,10 +74,10 @@ session::checkSession();
         </div>
         <div class="grid_12">
             <ul class="nav main">
-                <li class="ic-dashboard"><a href="index.php"><span>Thống kê</span></a> </li>
-                <li class="ic-form-style"><a href="changepassword.php"><span>Quản lý khách hàng</span></a></li>
+                <li class="ic-dashboard"><a href="thongke.php"><span>Thống kê</span></a> </li>
+                <li class="ic-form-style"><a href="inforkh.php"><span>Quản lý khách hàng</span></a></li>
 				<!-- <li class="ic-typography"><a href="changepassword.php"><span>Quản lý khách hàng</span></a></li> -->
-				<li class="ic-grid-tables"><a href="inbox.php"><span>Thắc mắc</span></a></li>
+				<!-- <li class="ic-grid-tables"><a href="inbox.php"><span>Thắc mắc</span></a></li> -->
                 <!-- <li class="ic-charts"><a href=""><span></span></a></li> -->
             </ul>
         </div>
