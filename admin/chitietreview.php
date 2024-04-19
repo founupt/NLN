@@ -26,12 +26,18 @@
             } else {
                 $id = $_GET['DG_MA'];
             }
-
             $KH_TEN = "";
             if (isset($_GET['KH_TEN'])) {
                 $KH_TEN = $_GET['KH_TEN']; 
             }
             ?>
+            <?php
+            $pd = new review();
+            if (isset($_GET['DG_MA'])) {
+                $id = $_GET['DG_MA'];
+                $delete_pro = $pd -> delete_review($id);
+            }
+        ?>
             <?php
             $rv = new review();
 			$get_review = $rv->getreviewbyId($id);
@@ -66,6 +72,8 @@
 									<td><?php echo $pay_item['DG_MA']; ?></td>
                                     <td><?php echo $pay_item['DG_NOIDUNG']; ?></td>
                                     <td><?php echo $pay_item['DG_SAO']; ?></td>
+                                    <td><a onclick =  "return confirm ('Bạn có chắc muốn xóa không???')" href="?DG_MA=<?php echo $result['DG_MA'] ?>">Delete</a></td>
+
                                 </tr>
 			<?php
 				}

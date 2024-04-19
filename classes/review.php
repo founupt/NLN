@@ -15,7 +15,6 @@ class review {
         $this -> fm = new Format();
     }
     public function insert_review($HD_MA, $DG_NOIDUNG, $DG_SAO) {
-        // Escaping data to prevent SQL injection
         $HD_MA = mysqli_real_escape_string($this->db->link, $HD_MA); 
         $DG_NOIDUNG = mysqli_real_escape_string($this->db->link, $DG_NOIDUNG);
         $DG_SAO = mysqli_real_escape_string($this->db->link, $DG_SAO);

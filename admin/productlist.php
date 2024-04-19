@@ -36,11 +36,7 @@
 					<th>Mã loại món ăn</th>
 					<th>Giá món ăn</th>
 					<th>Hình ảnh món ăn</th>
-					<!-- <th>Mã thương hiệu sản phẩm</th>
-					<th>Mô tả sản phẩm</th>  -->
-					<!-- <th>Màu sản phẩm</th> -->
 					<th>Trạng thái món ăn</th>
-					<!-- <th>Tình trạng sản phẩm</th> -->
 					<th>Chỉnh sửa sản phẩm</th>
 				</tr>
 			</thead>

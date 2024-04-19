@@ -37,10 +37,10 @@
 					<th>STT</th>
 					<th>Mã hóa đơn</th>
 					<th>Mã bài đăng</th>
-					<th>Nội dung </th>
+					<th style="width: 1163px; text-align: center;">Nội dung </th>
 					<th>Sao </th>
-					<th> Chi tiết </th>
-				</tr>
+					<th>Thao tác</th>
+			</tr>
 			</thead>
 			<tbody>
 
@@ -58,10 +58,12 @@
                                 <td><?php echo $i?></td>
 									<td><?php echo $pay_item['HD_MA']; ?></td>
 									<td><?php echo $pay_item['DG_MA']; ?></td>
-                                    <td><?php echo $pay_item['DG_NOIDUNG']; ?></td>
+									<td><span class="full-content"><?php echo $pay_item['DG_NOIDUNG']; ?></span></td>
                                     <td><?php echo $pay_item['DG_SAO']; ?></td>
-									<td><a href="chitietreview.php?reviewid=<?php echo $pay_item['DG_MA']; ?>">Xem chi tiết</a></td> 
-                                </tr>
+									<td><a onclick="return confirm('Bạn có chắc muốn xóa không???')" href="?reviewid=<?php echo $pay_item['DG_MA'] ?>">Delete</a></td>
+
+                        	</tr>
+							
 			<?php
 				}
 			}
@@ -72,7 +74,14 @@
        </div>
     </div>
 </div>
-
+<style>
+    .full-content {
+        max-height: 100px; /* Đặt chiều cao tối đa của cột "Nội dung" */
+        overflow: hidden; /* Ẩn nội dung tràn ra ngoài */
+        text-overflow: ellipsis; /* Hiển thị dấu chấm ba (...) khi nội dung bị cắt */
+        white-space: nowrap; /* Ngăn chặn việc xuống dòng trong cột */
+    }
+</style>
 <script type="text/javascript">
     $(document).ready(function () {
         setupLeftMenu();
